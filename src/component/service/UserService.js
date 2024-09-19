@@ -6,10 +6,13 @@ class UserService{
     static async login(email, password){
         try {
             const response = await axios.post(`${UserService.BASE_URL}/auth/login`, {email, password});
+            // window.location.reload();
             return response.data;
+            
         } catch (error) {
             throw new Error("Error logging in");
         }
+        
     }
     static async register(userData, token){
         try {

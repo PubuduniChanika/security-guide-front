@@ -15,6 +15,8 @@ function LoginPage(){
                 localStorage.setItem("token", userData.token);
                 localStorage.setItem("role", userData.role);
                 navigate('/profile');
+                window.location.reload(); // Refresh the page to get the updated user data from the server
+                
             }else{
                 setError(userData.message)
             }
